@@ -1,0 +1,103 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ipfs-node02-cm
+  namespace: ipfs
+data:
+  peerstore: |-
+    /ip4/10.104.180.94/tcp/9096/ipfs/QmdoQskK4jRY5ME7QzEEACWCJ9ioFKmsQ8VuE7LabZheC9
+    /ip4/10.100.177.20/tcp/9096/ipfs/QmWQLFAR6jADWpEZW8SibAQhYr3RLUbypMrAPkBRZ8D4fM
+    /ip4/10.106.10.68/tcp/9096/ipfs/Qmb2QMT3sfHtnp77VJTCG3WtSwdeQnevYEjAcuUvkpytQm
+  
+  service.json: |-
+    {
+      "cluster": {
+        "id": "QmWQLFAR6jADWpEZW8SibAQhYr3RLUbypMrAPkBRZ8D4fM",
+        "peername": "node02",
+        "private_key": "CAASqQkwggSlAgEAAoIBAQDe3pC8OUObLn7RqkQfjeDOMhtMpEeztOR5ieOOMYsDhQtwj5RIXf37bBnzH6oNkdIxspCf4kIh2nf0lFHAabkjiUI6O0DkU0cDZra8gCRKAD7Qrnmo4VCyi3E10bd600Xdh3WEQMm0z4tNpz3SLjjjejL64wegEmb7ZAgdGloO4pPUlQbmHgCwNNLn5yUH6oeE+9JqkFdhqdubg2zzrVvIMGUSpxYWwTCrkTZeycmZF57JjROy3Myrh10S5PwE0sA7UKLODb763yUhivIMk+k8iQDItHXvji1DKvrIDasWeuK4uyPe3o8vckmr8OFnaRmAd+UF/RgFwQCiTtzfzpkPAgMBAAECggEBAJP5IA3o02tgNpGMxAhTUhR1jkyXsoetrhjIJY8Oc+cVWeAVZHWb+nsJbj1PI8A4tl+K2J1fQ1toy0ZXh+QCDgt7Ib66Ar7WUAsBEokbZ3y+pvY1Mc+gMc0p6jO6l2D0j6mjO7JgtcvYFPys8s3vJJRcWSbcv/5W2YtGAmEYUv0X07CgG17OS76BaGllINwA9Y0qKGgsjLitVddwAL9JEKoWbTuzBuSxSV13hDBAeB77BKA54tvPBzzZZbZjZrKLtZ0hrFTrB8823Az0c9tr0gqMlvEOqzIZrfSe5DNgfvSrjq4k89Mew9ydjNsOXMdn2VSoHxyzJmh60Z8jDVmKS0ECgYEA8A1RzOBhEb2tRyPrr5z9qgmdoMFbu6tQMYbYxsuekaHzazBh4SKLY8Txhmw3QBnGDvPDM1f8kpB9JK4ywqhi4kQb1zqqZtG1xzCMWfjDTia21Ws40CCIhvZIz+u1+RKebhVWizpzcgPSpW72OznheP2qhkPvCYtEV+KvwBQ/6W8CgYEA7a0DNGF+9Jo24Wpw71Sj8DszVK6qW3KcD2wBTZZsdr2t/g3sQngzb1oblfHZzJ+F4ONMrGO8nvg5hkudcZmP44/FL7G54ihzn9jhvNHA0XTeKx7B7xkqBRQZSIFM38A5Rj0Jl/QXq9UQ6nOpv7T0KeUP+3Lwzd1HKWee/fCMOmECgYB82wCr5hy25IgG03kXqzkIwt2YqllzICSizfdcVrYQG0MHgm+2cIg9iUbyWsDV91Hbnw/tWZtGBB8DABPoyTo9Y51zcdEFj5fTlb26Yjf7Iwm/sXgoUHOSdvDiLEBG31dF/JU571nyeGiMoU0y+uT6UD3sfdMLjMMsTvyIlD+1wwKBgQDJad7XWu/tdWqgqEVAbGfpQyIC12oCySM7ZnnMOHd+QMvcCgx3X8mmyaOq9CNwZpdbtwPY60SDKzQEfLvV8x6e581g16oA3+rsQS07iD1wwysrO4t5hce4OgobCYgN7aYbwcoJfY85zPvi01W84iov/rAGlKdArg6KJgf0hw8uwQKBgQCALK0fhCi5ZASgpmxExljlntFNjq+qq9M5ODxXR5j6gf13OIZHkC418cDM47IWebtBdUJY7gMXVWDJ6oLd9UJKDh2h+nVC08DEPOpKJe28NY4n0ZCUKLKjshccKfLkosebbV9kWfTlZ2Nkzm0ng8B2Oh7TH0HzJwX/Ah3BpzxdWw==",
+        "secret": "263f076508630087afa95f512c8a245ebabc1367ce39e89f16f16aa4c03d55c3",
+        "leave_on_shutdown": false,
+        "listen_multiaddress": "/ip4/0.0.0.0/tcp/9096",
+        "state_sync_interval": "10m0s",
+        "ipfs_sync_interval": "2m10s",
+        "replication_factor_min": -1,
+        "replication_factor_max": -1,
+        "monitor_ping_interval": "15s",
+        "peer_watch_interval": "5s",
+        "disable_repinning": false
+      },
+      "consensus": {
+        "raft": {
+          "init_peerset": [
+            "QmdoQskK4jRY5ME7QzEEACWCJ9ioFKmsQ8VuE7LabZheC9",
+            "QmWQLFAR6jADWpEZW8SibAQhYr3RLUbypMrAPkBRZ8D4fM",
+            "Qmb2QMT3sfHtnp77VJTCG3WtSwdeQnevYEjAcuUvkpytQm"
+          ],
+          "wait_for_leader_timeout": "2m",
+          "network_timeout": "20s",
+          "commit_retries": 1,
+          "commit_retry_delay": "200ms",
+          "backups_rotate": 6,
+          "heartbeat_timeout": "5s",
+          "election_timeout": "5s",
+          "commit_timeout": "500ms",
+          "max_append_entries": 64,
+          "trailing_logs": 10240,
+          "snapshot_interval": "2m0s",
+          "snapshot_threshold": 8192,
+          "leader_lease_timeout": "1s"
+        }
+      },
+      "api": {
+        "ipfsproxy": {
+          "node_multiaddress": "/ip4/127.0.0.1/tcp/5001",
+          "listen_multiaddress": "/ip4/0.0.0.0/tcp/9095",
+          "read_timeout": "0s",
+          "read_header_timeout": "5s",
+          "write_timeout": "0s",
+          "idle_timeout": "1m0s"
+        },
+        "restapi": {
+          "http_listen_multiaddress": "/ip4/0.0.0.0/tcp/9094",
+          "read_timeout": "0s",
+          "read_header_timeout": "5s",
+          "write_timeout": "0s",
+          "idle_timeout": "2m0s",
+          "basic_auth_credentials": null,
+          "headers": {},
+          "cors_allowed_origins": ["*"],
+          "cors_allowed_methods": ["GET"],
+          "cors_allowed_headers": [],
+          "cors_exposed_headers": ["Content-Type", "X-Stream-Output", "X-Chunked-Output", "X-Content-Length"],
+          "cors_allow_credentials": true,
+          "cors_max_age": "0s"
+        }
+      },
+      "ipfs_connector": {
+        "ipfshttp": {
+          "node_multiaddress": "/ip4/127.0.0.1/tcp/5001",
+          "connect_swarms_delay": "30s",
+          "pin_method": "refs",
+          "ipfs_request_timeout": "5m0s",
+          "pin_timeout": "24h0m0s",
+          "unpin_timeout": "3h0m0s"
+        }
+      },
+      "pin_tracker": {
+        "maptracker": { "max_pin_queue_size": 50000, "concurrent_pins": 10 },
+        "stateless": { "max_pin_queue_size": 50000, "concurrent_pins": 10 }
+      },
+      "monitor": {
+        "monbasic": { "check_interval": "15s" },
+        "pubsubmon": { "check_interval": "15s" }
+      },
+      "informer": {
+        "disk": { "metric_ttl": "30s", "metric_type": "freespace" },
+        "numpin": { "metric_ttl": "10s" }
+      }
+    }
+
+  swarm.key: |-
+    /key/swarm/psk/1.0.0/
+    /base16/
+    7b879e666d7e0242da44d96e1c00c6fc6d8488c2bebb654a182e1667ceaf963d

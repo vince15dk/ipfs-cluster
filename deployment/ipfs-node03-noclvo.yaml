@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ipfs-node03
+  namespace: ipfs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      sort: node03
+  template:
+    metadata:
+      labels:
+        sort: node03
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: vince15dk3c.mylabserver.com
+      containers:
+      - name: ipfs
+        image: ipfs/go-ipfs:v0.4.20
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+          limits:
+            cpu: "200m"
+            memory: "200Mi"
+        volumeMounts:
+        - name: ipfs-volume
+          mountPath: /data/ipfs
+        env:
+        - name: IPFS_PROFILE
+          value: "server"
+        - name: IPFS_LOGGING
+          value: "DEBUG"
+      - name: ipfs-cluster
+        image: ipfs/ipfs-cluster:v0.10.1
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+          limits:
+            cpu: "200m"
+            memory: "200Mi"
+      volumes:
+      - name: ipfs-volume
+        persistentVolumeClaim:
+          claimName: ipfs-node03-pvc
